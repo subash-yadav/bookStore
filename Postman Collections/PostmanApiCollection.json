@@ -1,0 +1,83 @@
+{
+	"info": {
+		"_postman_id": "1fcce3a5-e95b-4991-a01e-a9934fa602ed",
+		"name": "ventureIt",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/books/getBookByISBN",
+			"id": "1e451f64-7dd1-46ce-b1f0-2f016d3fb5c3",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"bookISBN\" : \"702727014581\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/books/getBookByISBN",
+				"description": "Seaching book by isbn number, It will always return unique book"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/books/getBookByAuthor",
+			"id": "fe431109-2bde-4841-a43e-86e0369f1e75",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"author_name\" : \"Plato\",\n    \"sort_by\" : \"publication_date\",\n    \"sort_type\" : \"DESC\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/books/getBookByAuthor"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/user/postAuthorDetails",
+			"id": "348c57ac-d59c-42cd-b5b1-e3bc75738443",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVwdXJkeTBAY2RiYWJ5LmNvbSJ9.Im8WKnX7Yb_EO4j79iEs5WN8dwafbKL_A-erzrHCoG4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"author_name\" : \"abc_test\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/user/postAuthorDetails",
+				"description": "Post autor details:\n\nbody payload:\n{\n    \"author_name\":\"abc\"\n} "
+			},
+			"response": []
+		}
+	]
+}
